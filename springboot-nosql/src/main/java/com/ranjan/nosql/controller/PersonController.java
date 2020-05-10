@@ -11,6 +11,7 @@ import com.ranjan.nosql.models.Person;
 import com.ranjan.nosql.service.PersonService;
 
 @RestController
+@RequestMapping("/person")
 public class PersonController {
 
 	@Autowired
@@ -26,7 +27,12 @@ public class PersonController {
 	public Person getPerson(@RequestParam String firstName) {
 		return personService.getByFirstName(firstName);
 	}
-
+	
+	@RequestMapping("/age")
+	public List<Person> getPerson(@RequestParam int age) {
+		return personService.getByAge(age);
+	}
+	
 	@RequestMapping("/getAll")
 	public List<Person> getAll() {
 		return personService.getAll();

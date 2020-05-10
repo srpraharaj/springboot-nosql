@@ -26,6 +26,10 @@ public class PersonService {
 		return personRepo.findByFirstName(firstName);
 	}
 	
+	public List<Person> getByAge(int age) {
+		return personRepo.findByAge(age);
+	}
+	
 	public Person update(String firstName, String lastName, int age) {
 		Person p = personRepo.findByFirstName(firstName);
 		p.setLastName(lastName);
